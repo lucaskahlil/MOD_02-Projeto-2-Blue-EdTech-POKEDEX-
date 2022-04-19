@@ -1,0 +1,1 @@
+# MOD_02-Projeto-2-Blue-EdTech-POKEDEX-
