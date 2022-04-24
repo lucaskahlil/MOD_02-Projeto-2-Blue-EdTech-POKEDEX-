@@ -5,9 +5,10 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
-const pokedex = [
+// BANCO DE DADOS FAKE
+const pokedex = [ 
   {
-    numero: "01",
+    id: "01",
     nome: "Pikachu",
     tipo: "Elétrico",
     imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
@@ -19,7 +20,7 @@ const pokedex = [
     habilidade: "Gerar eletricidade",
   },
   {
-    numero: "02",
+    id: "02",
     nome: "Pidgeotto",
     tipo: "Normal/Vôo",
     imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/017.png",
@@ -31,7 +32,7 @@ const pokedex = [
     habilidade: "Olho aguçado",
   },
   {
-    numero: "03",
+    id: "03",
     nome: "Mewtwo",
     tipo: "Psíquico",
     imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png",
@@ -52,3 +53,7 @@ app.get("/", (req, res) => {
 app.listen(3000, () =>
   console.log("Servidor rodando em http://localhost:3000")
 );
+
+app.get("/detalhes", (req, res) => {
+  res.render('detalhes.ejs');
+});
