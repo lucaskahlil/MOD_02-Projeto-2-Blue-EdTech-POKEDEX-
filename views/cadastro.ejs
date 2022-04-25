@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Pokedex Blue-EdTech</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %> 
+    <main>
+        <section class="cadastro">
+        <form method="post" action="/cadastro">
+            <fieldset id="fieldPrincipal">
+            <h2>Cadastro</h2>
+            <fieldset>
+                <input type="text" id="nome" name="nome" required>
+                <label for="nome"> Nome </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="text" id="tipo" name="tipo" required>
+                <label for="tipo"> Tipo </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="url" id="imagem" name="imagem" required>
+                <label for="imagem"> Imagem </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="text" id="descricao" name="descricao" required>
+                <label for="descricao"> Descrição </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="number" id="altura" name="altura" required>
+                <label for="altura"> Altura </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="number" id="peso" name="peso" required>
+                <label for="peso"> Peso </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="text" id="categoria" name="categoria" required>
+                <label for="categoria"> Categoria </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="text" id="habilidade" name="habilidade" required>
+                <label for="habilidade"> Habilidade </label>
+            </fieldset>
+
+            <button id="button" type="submit">Registrar</button>
+
+            </fieldset>
+            
+        </form>
+        </section>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

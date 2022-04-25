@@ -15,15 +15,17 @@
    <main>
         <section id="pokemons">  
             <% pokedex.forEach((pokemon) => { %>
+            <a href="/detalhes/<%= pokemon.id %>">
                 <article class="card">
                     <div class="card_img"> 
                         <img src="<%= pokemon.imagem %>" alt="<%= pokemon.nome %>">
                     </div>
                     <div class="nomeEtipo"> 
-                        <%= pokemon.nome %> -
-                        <%= pokemon.tipo %>
+                        <%= pokemon.nome %>
+                        <br/> Tipo: <%= pokemon.tipo %>
                     </div>
                 </article>
+            </a>    
             <% }) %>
         </section>
     </main>

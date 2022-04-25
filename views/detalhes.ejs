@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/style.css">
-    <title>Document</title>
+    <title>Pokedex Blue-EdTech</title>
 </head>
 <body>
-    <!-- sintaxe para trazer o header em outro arquivo -->
     <%- include('partials/header.ejs') %> 
     <main>
-
+        <section id="detalhes">
+            <div class="detalhes">
+                <img src="<%= poke.imagem %>" alt=""/>
+                <h1><%= poke.nome %></h1>
+                <p class="descricao">Tipo: <%= poke.tipo %> </p>
+                <p class="descricao"><%= poke.descricao %></p>
+                <p class="descricao">Altura: <%= poke.altura %> cm</p>
+                <p class="descricao">Peso: <%= poke.peso %> Kg</p>
+                <p class="descricao">Categoria: <%= poke.categoria %></p>
+                <p class="descricao">Habilidade: <%= poke.habilidade %></p>
+            </div>
+        </section>
     </main>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
