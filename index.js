@@ -48,9 +48,14 @@ const pokedex = [
   },
 ];
 
+let message;
+
 // Rotas
-app.get("/", (req, res) => {
-  res.render("index", { pokedex });
+app.get("/", (req, res) => { 
+  setTimeout(() => {
+    message = "";
+  }, 1000);
+  res.render("index", { pokedex, message });
 });
 
 app.listen(3000, () =>
@@ -65,17 +70,18 @@ app.get("/detalhes/:id", (req, res) => {
     }
   })
   res.render('detalhes.ejs', {
-    poke
+    poke, message,
   });
 });
 
 app.get("/cadastro", (req, res) => {
-  res.render("cadastro.ejs");
+  res.render("cadastro.ejs", {message});
 });
 
 app.post("/cadastro", (req, res) => {
   let id = pokedex[pokedex.length-1].id + 1
   const {nome, tipo, imagem, descricao, altura, peso, categoria, habilidade} = req.body
   pokedex.push({id: id, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade});
+  message = `Seu Pokemon foi cadastrado com sucesso!`;
   res.redirect('/')
 });
