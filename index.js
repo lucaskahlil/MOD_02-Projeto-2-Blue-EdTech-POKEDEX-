@@ -1,6 +1,9 @@
 const express = require("express");
 const path = require("path");
+import dotenv from 'dotenv'
 const app = express();
+dotenv.config();
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
